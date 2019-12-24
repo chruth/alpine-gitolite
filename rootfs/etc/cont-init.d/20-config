@@ -30,6 +30,9 @@ chown -R git:git \
   /config \
   /app
 
+chmod g-w /config
+chmod 700 /config/.ssh
+
 # setup gitolite
 git clone https://github.com/sitaramc/gitolite /tmp/gitolite
 su - git -c "/tmp/gitolite/install -to /app" && rm -rf /tmp/gitolite
