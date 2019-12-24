@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bash
+
+# enable shell
+usermod --shell /bin/bash yaapc
+
+# change username and group name
+usermod -l git yaapc && \
+groupmod -n git yaapc
+
+# change puid and pgid
+groupmod -o -g "$PGID" git
+usermod -o -u "$PUID" git

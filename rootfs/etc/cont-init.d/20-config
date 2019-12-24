@@ -1,0 +1,36 @@
+#!/usr/bin/with-contenv bash
+
+# create directories
+mkdir -p \
+  /app \
+  /run/sshd \
+  /config/{host_keys,.ssh}
+
+# disable ssh password authentication
+sed -i 's@#PasswordAuthentication yes@PasswordAuthentication no@g' /etc/ssh/sshd_config
+
+# change pidfile path
+sed -i 's@#PidFile.*@PidFile /run/sshd/sshd.pid@g' /etc/ssh/sshd_config
+
+# create or copy existing host keys
+if [[ ! -e /etc/ssh/ssh_host_rsa_key ]]; then
+  if [[ -e "${CONFIG_DIR}/host_keys/ssh_host_rsa_key" ]]; then
+    rm -f /etc/ssh/ssh_host_*_key*
+    cp ${CONFIG_DIR}/host_keys/* /etc/ssh/
+  else
+    ssh-keygen -A
+    cp /etc/ssh/ssh_host_* /config/host_keys/
+  fi
+fi
+
+# fix permissions
+chown -R git:git \
+  /etc/ssh/ssh_host_*_key* \
+  /run/sshd \
+  /config \
+  /app
+
+# setup gitolite
+git clone https://github.com/sitaramc/gitolite /tmp/gitolite
+su - git -c "/tmp/gitolite/install -to /app" && rm -rf /tmp/gitolite
+su - git -c "/app/gitolite setup -pk /config/admin.pub"
