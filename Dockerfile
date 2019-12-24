@@ -1,4 +1,4 @@
-FROM chruth/base
+FROM chruth/alpine-base
 LABEL maintainer="chruth"
 
 COPY rootfs /
