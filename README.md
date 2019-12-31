@@ -1,6 +1,6 @@
 # alpine-gitolite
 
-Alpine base image with **s6-ovleray**, **openssh-server** (stable) and **gitolite**
+Alpine based image with **s6-ovleray** (git), **openssh-server** (apk) and **gitolite** (git)
 
 ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/chruth/alpine-gitolite?style=flat-square)
 ![Docker Pulls](https://img.shields.io/docker/pulls/chruth/alpine-gitolite?style=flat-square)
