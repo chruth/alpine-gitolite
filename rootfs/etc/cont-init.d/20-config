@@ -32,6 +32,8 @@ chown -R git:git \
 
 chmod g-w /config
 chmod 700 /config/.ssh
+chmod 600 /etc/ssh/ssh_host_*_key
+chmod 644 /etc/ssh/ssh_host_*_key.pub
 
 # setup gitolite
 git clone https://github.com/sitaramc/gitolite /tmp/gitolite
