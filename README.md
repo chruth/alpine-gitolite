@@ -1,11 +1,11 @@
 # alpine-gitolite
 
-Alpine based image with **s6-ovleray** (git), **openssh-server** (apk) and **gitolite** (git)
+Alpine Linux with **gitolite** and **openssh-server**
 
-![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/chruth/alpine-gitolite?style=flat-square)
-![Docker Pulls](https://img.shields.io/docker/pulls/chruth/alpine-gitolite?style=flat-square)
-![MicroBadger Layers](https://img.shields.io/microbadger/layers/chruth/alpine-gitolite?style=flat-square)
-![GitHub](https://img.shields.io/github/license/chruth/alpine-gitolite?style=flat-square)
+[![Drone (cloud)](https://img.shields.io/drone/build/chruth/alpine-gitolite?style=flat-square)](https://cloud.drone.io/chruth/alpine-gitolite)
+[![Docker Pulls](https://img.shields.io/docker/pulls/chruth/alpine-gitolite?style=flat-square)](https://hub.docker.com/r/chruth/alpine-gitolite)
+[![MicroBadger Layers](https://img.shields.io/microbadger/layers/chruth/alpine-gitolite?style=flat-square)](https://microbadger.com/images/chruth/alpine-gitolite)
+[![GitHub](https://img.shields.io/github/license/chruth/alpine-gitolite?style=flat-square)](https://github.com/chruth/alpine-gitolite/blob/master/LICENSE)
 
 # Usage
 
